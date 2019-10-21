@@ -1,0 +1,81 @@
+Design
+
+1) Purpose:
+JAVA / PYTHON
+Write a simple program that converts English text to Morse code and vice versa. For example, English
+text “SOS” should be converted to “•••−−−•••”. Converter is case insensive, thus “sos” should
+produce same output “•••−−−•••” as “SOS” does. When converted to English, everything should be
+uppercased, thus “sos” converted to Morse and back to English should output “SOS”.
+
+For this task, text (Either English or Morse) should be read from a file and output should be written to
+another. Simple command line interface for usage is enough which asks for input and output files and
+offers a way to do conversion from either English or Morse. 
+
+In morse code file character is separated from each other with a dot and there cannot be two dots in a row and '_' indicates a new word 
+
+When converting backwards, the script should tell if there is a non valid morse code.
+
+An imaginary customer will need a graphical user interface later, as well as other means for input, for
+example via a graphical user interface or a REST API. Also, output needs to be saved to elsewhere later,
+for example to a cloud database via REST API. A support for other languages will be implemented in the
+future. There is no need to implement these features yet, but those future requirements should be kept
+in mind in software design and structure.
+
+USAGE:
+Run morseCode.py python file in terminal.
+First program asking a input file name
+Second program asking a output file name
+Third program asking what to do:
+If you like to convert text to morse code select: 1
+If you like to convert morse code to text select: 2
+If you like to quit select: q
+
+Make selection and new output file is written if there are no errors. 
+
+FUNCTIONS:
+1) def main()
+- Hard-coded driver function to run the program
+
+2) def file_conversion()
+- This is for file to file conversion
+- Text to morse code and save new file
+- Morse code to text and save new file
+
+3) def encrypt()
+- Text to morse code
+
+4) def decrypt()
+- Morse code to upper case text
+
+ERROR HANDLING:
+
+def file_conversion() function:
+- If input file not found
+** print own error message
+** print IOError
+** return false
+** print FAIL
+- If two dots on row in case of morse code to text
+** print own error code
+** print FAIL
+
+def encrypt() function:
+- Character not found in morse code set (MORSE_CODE_DICT)
+** print own error code
+** print ValueError
+** raise exception
+** print FAIL
+
+def decrypt() function:
+- Morse code not found in morse code set (MORSE_CODE_DICT)
+** print own error code
+** print ValueError
+** raise exception
+** print FAIL
+
+LOCALISATION:
+Not implemented yet but easy to implement later by using gettext.
+
+
+
+
